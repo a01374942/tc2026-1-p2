@@ -5,6 +5,8 @@ const path = require("path")
 //Creación de la aplicación web
 const app = express();
 vjRoutes=require('./routes/videojuegos');
+conRoutes=require('./routes/consolas');
+vcRoutes=require('./routes/consolaVideojuegos');
 const sequelize = require('./utils/database')
 //Configurar el servidor y que sepa que es un json
 app.use(express.json())
@@ -12,6 +14,8 @@ app.use(express.urlencoded({extended:true}))
 
 
 app.use("/videojuegos",vjRoutes);
+app.use("/consolas",conRoutes);
+app.use("/cv",vcRoutes);
 //Atender una petición del recurso mipagina
 
 sequelize.sync()
