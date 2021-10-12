@@ -1,15 +1,6 @@
 const path = require('path')
 const Videojuego = require('../utils/database').models.videojuego
 
-//objeto de conexión
-//const sequelize = require('../utils/database')
-
-//const Videojuego = require('../models/videojuegos')
-
-/*exports.getAgregarVideojuego = (req, res)=>{
-    res.send('Formulario')
-}*/
-
 exports.postAgregarVideojuego = (req, res)=>{
     console.log(req.body)
     Videojuego.create(req.body)
@@ -21,12 +12,7 @@ exports.postAgregarVideojuego = (req, res)=>{
         console.log(err)
         res.json({estado:"error"})
     })
-    //res.redirect('/videojuegos/confirmacionDatos')*/
 }
-
-/*exports.getConfirmacionDatos = (req, res)=>{
-    res.send('Confirmacion datos')
-}*/
 
 exports.getObtenerVideojuegos = (req, res)=>{
     Videojuego.findAll()
@@ -59,9 +45,7 @@ exports.postBorrarVideojuego = (req, res)=>{
 
 exports.postActualizarVideojuego = (req, res)=>{
     console.log(req.body)
-    Videojuego.update({
-        nombre: req.body.nombre
-    },{
+    Videojuego.update(req.body,{
         where:{
             id:req.body.id
         }

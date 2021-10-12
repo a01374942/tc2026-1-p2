@@ -6,11 +6,11 @@ exports.postAgregarCV = (req, res)=>{
     ConsVideo.create(req.body)
     .then(result=>{
         console.log("Consola-Videojuego creado exitosamente")
-        res.json({estado:"aceptado"})
+        res.json({estado:"Consola-Videojuego aceptado"})
     })
     .catch((err)=>{
         console.log(err)
-        res.json({estado:"error"})
+        res.json({estado:"error, verifica tu informacion"})
     })
 }
 
@@ -34,8 +34,8 @@ exports.postBorrarCV = (req, res)=>{
         }
     })
     .then(ConVideo =>{
-        console.log("Registro eliminado")
-        res.json({estado:"aceptado"})
+        console.log("Registro consola-Videojuego eliminado correctamente")
+        res.json({estado:"Registro consola-Videojuego aceptado y eliminado"})
     })
     .catch((err)=>{
         console.log(err)
@@ -51,8 +51,8 @@ exports.postActualizarCV = (req, res)=>{
         }
     })
     .then(() =>{
-        console.log("Registro Actualizado")
-        res.json({estado:"aceptado"})
+        console.log("Registro consola-videojuego actualizado correctamente")
+        res.json({estado:"Registro consola-videojuego aceptado"})
     })
     .catch((err)=>{
         console.log(err)

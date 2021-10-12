@@ -45,9 +45,7 @@ exports.postBorrarConsola = (req, res)=>{
 
 exports.postActualizarConsola = (req, res)=>{
     console.log(req.body)
-    Consola.update({
-        nombre: req.body.nombre
-    },{
+    Consola.update(req.body,{
         where:{
             id:req.body.id
         }
