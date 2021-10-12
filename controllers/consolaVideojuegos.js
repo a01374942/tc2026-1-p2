@@ -45,9 +45,7 @@ exports.postBorrarCV = (req, res)=>{
 
 exports.postActualizarCV = (req, res)=>{
     console.log(req.body)
-    ConsVideo.update({
-        nombre: req.body.nombre
-    },{
+    ConsVideo.update(req.body,{
         where:{
             id:req.body.id
         }
